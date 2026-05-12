@@ -3,6 +3,7 @@
   max-width: 1100px;
   margin: 0;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .service-accordion-item {

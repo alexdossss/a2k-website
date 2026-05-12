@@ -3,6 +3,8 @@ footer {
   display: flex;
   justify-content: center;
   padding: 2.5rem 3rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-container {

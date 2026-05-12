@@ -12,10 +12,11 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem 3rem;
+  box-sizing: border-box;
 }
 
 .a2k-logo {
-  height: 28px;
+  height: 30px;
   object-fit: contain;
 }
 
