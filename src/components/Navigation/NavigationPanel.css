@@ -1,0 +1,94 @@
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navigation-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
+}
+
+.a2k-logo {
+  height: 28px;
+  object-fit: contain;
+}
+
+.grouped-links-container {
+  display: flex;
+  align-items: center;
+  background-color: #f4b34a;
+  border-radius: 9999px;
+  padding: 0.35rem 0.35rem 0.35rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.grouped-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.25rem;
+}
+
+.grouped-links li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #111;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.grouped-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown-icon {
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: #111;
+  margin-left: 0.25rem;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 255, 0, 0.6);
+}

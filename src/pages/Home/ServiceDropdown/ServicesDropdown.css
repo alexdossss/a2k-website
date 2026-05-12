@@ -1,0 +1,139 @@
+.services-dropdown-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0;
+  padding: 2rem;
+}
+
+.service-accordion-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.service-accordion-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  box-shadow: 
+    0 20px 20px -10px rgba(0, 0, 0, 0.03); 
+  pointer-events: none; 
+  z-index: 1;
+}
+
+.service-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  cursor: pointer;
+}
+
+.service-accordion-header h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.service-chevron {
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: #111;
+}
+
+.service-chevron.open {
+  transform: rotate(180deg);
+}
+
+.service-accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.service-accordion-content.open {
+  grid-template-rows: 1fr;
+}
+
+.service-accordion-content.open .service-content-inner {
+  opacity: 1;
+  visibility: visible;
+}
+
+.service-content-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 6rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.service-text-col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.service-text-col p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  max-width: 95%;
+  text-align: left;
+}
+
+.service-link-container {
+  margin-top: auto;
+  width: 100%;
+}
+
+.service-avail-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #111;
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1.5px solid #111;
+  transition: opacity 0.3s ease;
+}
+
+.service-avail-link span {
+  font-weight: 600;
+}
+
+.service-avail-link:hover {
+  opacity: 0.6;
+}
+
+.service-image-col {
+  width: 100%;
+  height: 400px;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.service-image-col img, .service-image-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.service-image-placeholder {
+  background: linear-gradient(135deg, #1f2937, #4b5563);
+}

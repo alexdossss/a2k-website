@@ -1,0 +1,89 @@
+.featured-carousel-container {
+  width: 100%;
+  max-width: 1192px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured-track {
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0 2rem 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto;
+}
+
+.featured-track::-webkit-scrollbar {
+  display: none;
+}
+.featured-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.featured-card {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 350px;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  scroll-snap-align: start;
+  border-bottom-right-radius: 0;
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+}
+
+.featured-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.featured-card-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.featured-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.featured-arrow {
+  background-color: transparent;
+  border: 1px solid #111;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #111;
+}
+
+.featured-arrow:hover {
+  background-color: #F4B34A;
+  border-color: #F4B34A;
+}

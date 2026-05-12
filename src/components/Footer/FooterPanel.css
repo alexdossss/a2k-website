@@ -1,0 +1,50 @@
+footer {
+  background-color: #F4B34A;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 3rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.footer-logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container .a2k-logo {
+  height: 42px;
+  object-fit: contain;
+}
+
+.footer-copyright {
+  flex: 1;
+  text-align: right;
+  color: #111;
+  font-size: 0.95rem;
+  margin: 0;
+}

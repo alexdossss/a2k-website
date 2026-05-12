@@ -1,0 +1,164 @@
+.homepage-hero {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  margin-top: 1.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40em;
+}
+
+.hero-text h1 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 50px;
+}
+
+.yellow-gradient {
+  background: linear-gradient(90deg, #f4b34a 53%, #a46807 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-paragraph {
+  margin-top: 2em;
+  width: 22em;
+  text-align: center;
+  line-height: 22px;
+}
+
+.cta-contactpage {
+  padding: 2em 0;
+}
+
+.build-project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.build-project-btn:hover {
+  background-color: #f4b34a;
+  color: #000;
+}
+
+.build-project-btn .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.build-project-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.project-overview {
+  margin-top: 4em;
+}
+
+.featured-projects {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+  padding: 4em;
+  background-color: #7170700f;
+  box-sizing: border-box;
+}
+
+.featured-projects p {
+  width: 30em;
+  padding-top: 1em;
+}
+
+.services {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6.5em;
+  margin-bottom: 6.5em;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+.services-text p {
+  width: 30em;
+  padding-top: 1em;
+}
+
+.proven-process {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6.5em;
+  padding: 4em;
+  padding-bottom: 6em;
+  background-color: #7170700f;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.proven-process-text p {
+  width: 30em;
+  padding-top: 1em;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 4em;
+  width: 100%;
+  max-width: 80rem;
+  padding: 2em;
+  overflow-x: auto;
+}
+
+.inner-cards {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1e;
+  height: 430px;
+  width: 250px;
+  padding: 1em 2em;
+  border-radius: 40px;
+}
+
+.inner-cards h1 {
+  font-size: 24px;
+  height: 85px;
+  font-weight: 500;
+}
+
+.inner-cards p {
+  line-height: 22px;
+  font-size: 16px;
+}
+
+.cards-icon {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  margin-bottom: 1.5em;
+}
