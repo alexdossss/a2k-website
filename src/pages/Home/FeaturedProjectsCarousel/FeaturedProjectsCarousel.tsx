@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import './FeaturedProjectsCarousel.css';
-import { featuredProjectsInfo } from './FeaturedProjectsInfo';
+import { featuredProjectsInfo } from '../../../info-ts/FeaturedProjectsInfo';
 
 export default function FeaturedProjectsCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null);

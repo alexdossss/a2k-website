@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProjectOverviewCarousel.css';
-import { projectsInfo, type ProjectInfo } from './ProjectOverviewInfo';
+import { projectsInfo, type ProjectInfo } from '../../../info-ts/ProjectOverviewInfo';
 
 export default function ProjectOverviewCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);

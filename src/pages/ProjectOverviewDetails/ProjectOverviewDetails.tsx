@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { projectsInfo } from '../Home/ProjectsOverviewCarousel/ProjectOverviewInfo';
+import { projectsInfo } from '../../info-ts/ProjectOverviewInfo';
 import './ProjectOverviewDetails.css';
 
 export default function ProjectOverviewDetails() {
