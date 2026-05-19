@@ -86,13 +86,29 @@ export const projectsInfo: ProjectInfo[] = [
         description:
           "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
       },
+      {
+        title: "Discovery & Strategy",
+        description:
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      },
+      {
+        title: "Wireframe",
+        description:
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      },
+      {
+        title: "Visual Identity & Styling",
+        description:
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      },
     ],
     images: {
       coverImages: [""],
       galleryImages: ["", "", ""],
       iconImage: "",
     },
-    thumbnailImage: "https://i.pinimg.com/736x/ef/21/c7/ef21c7413e887a3d6309e3c86eca0a35.jpg",
+    thumbnailImage:
+      "https://i1-e.pinimg.com/736x/52/55/4b/52554ba82c9a997006a97f74b4fc0f1b.jpg",
     projectCategory: "Web Design",
   },
   {
@@ -147,7 +163,8 @@ export const projectsInfo: ProjectInfo[] = [
       galleryImages: ["", "", ""],
       iconImage: "",
     },
-    thumbnailImage: "https://i.pinimg.com/736x/01/bf/9d/01bf9d27dc6b6b44cbfe096a60c30ea3.jpg",
+    thumbnailImage:
+      "https://i1-e.pinimg.com/736x/52/55/4b/52554ba82c9a997006a97f74b4fc0f1b.jpg",
     projectCategory: "UI/UX",
   },
   {
@@ -203,7 +220,8 @@ export const projectsInfo: ProjectInfo[] = [
       galleryImages: ["", "", ""],
       iconImage: "",
     },
-    thumbnailImage: "https://i.pinimg.com/736x/84/78/60/8478603ee4d79e893712229910a259bf.jpg",
+    thumbnailImage:
+      "https://i1-e.pinimg.com/736x/52/55/4b/52554ba82c9a997006a97f74b4fc0f1b.jpg",
     projectCategory: "Branding",
   },
   {
@@ -258,7 +276,8 @@ export const projectsInfo: ProjectInfo[] = [
       galleryImages: ["", "", ""],
       iconImage: "",
     },
-    thumbnailImage: "https://i1-e.pinimg.com/736x/01/77/8f/01778fbe1ca58fc4ab0824845273f8cf.jpg",
+    thumbnailImage:
+      "https://i1-e.pinimg.com/736x/52/55/4b/52554ba82c9a997006a97f74b4fc0f1b.jpg",
     projectCategory: "Web Design",
   },
   {
@@ -314,7 +333,8 @@ export const projectsInfo: ProjectInfo[] = [
       galleryImages: ["", "", ""],
       iconImage: "",
     },
-    thumbnailImage: "https://i.pinimg.com/736x/84/78/60/8478603ee4d79e893712229910a259bf.jpg",
+    thumbnailImage:
+      "https://i1-e.pinimg.com/736x/52/55/4b/52554ba82c9a997006a97f74b4fc0f1b.jpg",
     projectCategory: "Video",
   },
 ];

@@ -6,7 +6,7 @@ function NavigationPanel() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <nav>
-      <div className="font-inter navigation-panel">
+      <div className="font-inter navigation-panel container">
         <div className="logo-container">
           <img
             src="/icons/a2k_icon.png"
@@ -15,7 +15,7 @@ function NavigationPanel() {
           />
         </div>
 
-        <div className="grouped-links-container">
+        <div className="grouped-links-container container">
           <ul className="grouped-links">
             <li>
               <Link to="/">Home</Link>
@@ -122,7 +122,7 @@ function NavigationPanel() {
           </ul>
         </div>
 
-        <Link to="/contact" className="contact-btn">
+        <Link to="/contact" className="contact-btn container">
           <span className="status-dot"></span>
           Contact
         </Link>

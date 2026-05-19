@@ -93,3 +93,10 @@ nav {
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(0, 255, 0, 0.6);
 }
+
+.logo-container, .contact-btn{
+  width: 8.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

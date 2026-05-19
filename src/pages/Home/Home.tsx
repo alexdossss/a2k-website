@@ -1,10 +1,26 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import ProjectOverviewCarousel from "./ProjectsOverviewCarousel/ProjectOverviewCarousel.tsx";
 import ServicesDropdown from "./ServiceDropdown/ServicesDropdown.tsx";
+import WorkflowCanvas from "./WorkflowCanvas/WorkflowCanvas.tsx";
 import { developers } from "../../info-ts/Developers.ts";
+import { workflowInfo } from "../../info-ts/WorkflowInfo.ts";
 
 export default function Home() {
+  const [activeWorkflowLayer, setActiveWorkflowLayer] = useState(0);
+  const [hoveredWorkflowLayer, setHoveredWorkflowLayer] = useState(-1);
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+
+  const toggleCard = (id: number) => {
+    setFlippedCards((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
   return (
     <>
       <div className="homepage-hero">
@@ -12,6 +28,7 @@ export default function Home() {
           {developers.map((dev) => (
             <div className="dev-container" key={dev.id}>
               <img className="dev-image" src={dev.image} alt={dev.name} />
+              <div className="dev-nickname font-urbanist">{dev.nickname}</div>
             </div>
           ))}
         </section>
@@ -73,8 +90,79 @@ export default function Home() {
           </section>
 
           <section className="textN3d">
-            <div className="workflow-text"></div>
-            <div className="workflow-3d"></div>
+            <div className="workflow-text flex-col font-urbanist">
+              {workflowInfo.map((step, i) => {
+                const isActive = i === activeWorkflowLayer;
+                const isHovered = i === hoveredWorkflowLayer;
+
+                return (
+                  <div
+                    key={step.id}
+                    className={`workflow-item ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveWorkflowLayer(isActive ? -1 : i);
+                    }}
+                    onMouseEnter={() => setHoveredWorkflowLayer(i)}
+                    onMouseLeave={() =>
+                      setHoveredWorkflowLayer((prev) =>
+                        prev === i ? -1 : prev,
+                      )
+                    }
+                  >
+                    <div className="workflow-item-header">
+                      <div className="workflow-icon">
+                        {isActive ? (
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                          </svg>
+                        ) : (
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        )}
+                      </div>
+                      <h3>{step.title}</h3>
+                    </div>
+                    <div
+                      className={`workflow-item-content-wrapper ${isActive ? "active" : ""}`}
+                    >
+                      <div className="workflow-item-content font-inter">
+                        <p>{step.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="workflow-3d">
+              <WorkflowCanvas
+                activeIndex={activeWorkflowLayer}
+                hoveredIndex={hoveredWorkflowLayer}
+                onLayerClick={setActiveWorkflowLayer}
+                onLayerHover={setHoveredWorkflowLayer}
+              />
+            </div>
           </section>
         </section>
       </div>
@@ -89,7 +177,40 @@ export default function Home() {
             </p>
           </section>
 
-          <section className="dev-team-members-carousel"></section>
+          <section className="dev-team-members-carousel">
+            {developers.map((dev) => {
+              const isFlipped = flippedCards.has(dev.id);
+              return (
+                <div
+                  key={dev.id}
+                  className={`dev-card font-urbanist ${isFlipped ? "dev-card--flipped" : ""}`}
+                  onClick={() => toggleCard(dev.id)}
+                >
+                  <div className="dev-card-inner">
+                    <div className="dev-card-front">
+                      <div className="dev-card-front-info">
+                        <h3 className="dev-card-name">{dev.nickname}</h3>
+                        <p className="dev-card-role">{dev.role}</p>
+                      </div>
+                      <img className="dev-card-image" src={dev.image} alt={dev.name} />
+                    </div>
+                    <div className="dev-card-back">
+                      <h3 className="dev-card-name dev-card-name--gold">{dev.nickname}</h3>
+                      <p className="dev-card-role">{dev.role}</p>
+                      <p className="dev-card-desc">
+                        {dev.desc || "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."}
+                      </p>
+                      <div className="dev-card-stack">
+                        {dev.stack.map((s) => (
+                          <span key={s}>{s}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </section>
         </section>
       </div>
 
