@@ -1,90 +1,159 @@
-.carousel-container {
-  width: 100%;
-  height: 550px;
+.carousel-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  position: relative;
+  padding: 4rem 5rem;
   background-color: transparent;
-  perspective: 1000px;
-  margin: 3rem 0;
 }
 
-.carousel-track {
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #222;
+  background: transparent;
+  color: #222;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background: #222;
+  color: #fff;
+}
+
+.carousel-grid-container {
+  width: 100%;
+  max-width: 1750px;
+  overflow: hidden;
+}
+
+.carousel-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.carousel-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-page {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: flex-start;
+  gap: 2rem;
+  min-height: 38em;
+}
+
+.carousel-card-item {
   position: relative;
+  width: calc(25% - 1.5rem);
+  aspect-ratio: 1 / 1.05;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  height: 23em;
+}
+
+.card-bg-img {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.carousel-card {
+.carousel-card-item:hover .card-bg-img {
+  transform: scale(1.05);
+}
+
+.card-overlay {
   position: absolute;
-  width: 370px;
-  height: 380px;
-  border-radius: 24px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 60%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  text-align: center;
-  padding: 2rem;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  justify-content: space-between;
+  padding: 1.25rem;
 }
 
-.carousel-card.active {
-}
-
-.carousel-card:hover {
-  border: 5px solid white;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-}
-
-.card-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  line-height: 1.1;
-}
-
-.card-details {
-  font-size: 0.95rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  max-width: 80%;
-}
-
-.card-btn {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  color: white;
-  padding: 0.6rem 1.5rem;
+.card-badge {
+  align-self: flex-start;
+  background-color: #fff;
+  color: #111;
+  padding: 0.3rem 0.8rem;
   border-radius: 9999px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-.card-btn:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
+.card-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card-title-text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card-subtitle-text {
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.carousel-nav-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid #222;
+  border-radius: 8px;
+  width: 54px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #222;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #f0f0f0;
 }

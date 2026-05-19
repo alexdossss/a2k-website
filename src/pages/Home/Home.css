@@ -1,3 +1,22 @@
+.main-dev-images-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  width: 100%;
+  max-width: 80rem;
+  padding: 2em;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+.dev-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid #1e1e1e;
+  margin-left: -10px;
+}
+
 .homepage-hero {
   display: flex;
   flex-direction: column;
@@ -30,7 +49,7 @@
 }
 
 .hero-paragraph {
-  margin-top: 2em;
+  margin-top: 1em;
   width: 22em;
   text-align: center;
   line-height: 22px;
@@ -71,22 +90,6 @@
   margin-top: 4em;
 }
 
-.featured-projects {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4em;
-  padding: 4em;
-  background-color: #7170700f;
-  box-sizing: border-box;
-}
-
-.featured-projects p {
-  width: 30em;
-  padding-top: 1em;
-}
-
 .services {
   display: flex;
   text-align: center;
@@ -103,63 +106,93 @@
   padding-top: 1em;
 }
 
-.proven-process {
+.three-d-workflow {
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
   margin-top: 6.5em;
-  padding: 4em;
-  padding-bottom: 6em;
-  background-color: #7170700f;
+  margin-bottom: 6.5em;
+  padding: 4rem 5rem;
   box-sizing: border-box;
   width: 100%;
 }
 
-.proven-process-text p {
-  width: 30em;
-  padding-top: 1em;
+.container-text-threeD {
+  background-color: rgba(107, 107, 107, 0.15);
+  width: 100%;
+  max-width: 1750px;
+  border-radius: 40px;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
 }
 
-.card-container {
+.container-text-threeD p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.container-text-threeD h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.dev-team {
   display: flex;
-  justify-content: center;
-  gap: 2em;
-  margin-top: 4em;
-  width: 100%;
-  max-width: 80rem;
-  padding: 2em;
-  overflow-x: auto;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6.5em;
+  margin-bottom: 6.5em;
+  padding: 4rem 5rem;
   box-sizing: border-box;
+  width: 100%;
 }
 
-.inner-cards {
-  color: white;
+.container-dev-team p {
+  font-size: 20px;
+  font-weight: 500;
+  width: 25em;
+}
+
+.container-dev-team h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.design-academy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #1e1e1e;
-  height: 430px;
-  min-width: 200px;
-  padding: 1em 2em;
-  border-radius: 40px;
+  margin-top: 6.5em;
+  margin-bottom: 6.5em;
+  padding: 4rem 5rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
-.inner-cards h1 {
-  font-size: 24px;
-  height: 85px;
-  font-weight: 500;
+.container-design-academy {
+  width: 100%;
+  max-width: 1750px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  box-sizing: border-box;
 }
 
-.inner-cards p {
-  line-height: 22px;
-  font-size: 12px;
+.container-design-academy .header-text {
+  width: 40em;
 }
 
-.cards-icon {
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  margin-bottom: 1.5em;
+.design-academy-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.image-academy {
+  width: 255px;
+  height: 180px;
 }
