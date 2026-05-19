@@ -1,27 +1,30 @@
+import { lazy, Suspense, memo } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home/Home.tsx';
-import Services from './pages/Projects/Projects.tsx';
-import Projects from './pages/Projects/Projects.tsx';;
-import Contact from './pages/Contact/Contact.tsx';
 import NavigationPanel from './components/Navigation/NavigationPanel.tsx';
-import ProjectOverviewDetails from './pages/ProjectOverviewDetails/ProjectOverviewDetails.tsx';
-import './App.css';
 import FooterPanel from './components/Footer/FooterPanel.tsx';
+import './App.css';
+
+const Home = lazy(() => import('./pages/Home/Home.tsx'));
+const Projects = lazy(() => import('./pages/Projects/Projects.tsx'));
+const Contact = lazy(() => import('./pages/Contact/Contact.tsx'));
+const ProjectOverviewDetails = lazy(() => import('./pages/ProjectOverviewDetails/ProjectOverviewDetails.tsx'));
 
 function App() {
   return (
     <BrowserRouter>
       <NavigationPanel />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/project/:id" element={<ProjectOverviewDetails />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Projects />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/project/:id" element={<ProjectOverviewDetails />} />
+        </Routes>
+      </Suspense>
       <FooterPanel />
     </BrowserRouter>
   );
 }
 
-export default App;
+export default memo(App);

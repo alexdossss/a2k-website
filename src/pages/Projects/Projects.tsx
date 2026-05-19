@@ -1,6 +1,7 @@
+import { memo } from "react";
 import "./Projects.css";
 
-export default function Projects() {
+function Projects() {
   return (
     <>
       <div className="projectpage-hero">
@@ -27,3 +28,5 @@ export default function Projects() {
     </>
   );
 }
+
+export default memo(Projects);
