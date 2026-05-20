@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import "./Workflow3D.css";
 
@@ -143,7 +143,7 @@ export default function WorkflowCanvas({ activeIndex, hoveredIndex, onLayerClick
       return i !== -1 ? i : -1;
     }
 
-    const onMouseClick = (e: MouseEvent) => {
+    const onMouseClick = () => {
       // Use canvasHoverRef — written directly by animate() every frame, never stale.
       // stateRef.current.hoveredIndex is NOT used here because it goes through React
       // state → re-render → useEffect, so it lags behind and is stale at click time.

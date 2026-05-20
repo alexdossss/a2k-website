@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { projectsInfo } from "../../info-ts/ProjectOverviewInfo";
 import { useRef, useEffect } from "react";
+import MacBook3D from "../../components/MacBook3D/MacBook3D";
 import "./ProjectOverviewDetails.css";
 
 export default function ProjectOverviewDetails() {
@@ -10,16 +11,19 @@ export default function ProjectOverviewDetails() {
   const project = projectsInfo.find((p) => p.id === id);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [id]);
+
+  useEffect(() => {
     if (trackRef.current && project?.images?.galleryImages?.length) {
       const track = trackRef.current;
       requestAnimationFrame(() => {
         if (track && track.firstElementChild) {
           const itemWidth = (track.firstElementChild as HTMLElement).offsetWidth;
-          const gap = 32; // 2rem
+          const gap = 32;
           const itemsPerSet = project.images!.galleryImages!.length;
           const sets = 50;
           const middleSetStartIndex = Math.floor(sets / 2) * itemsPerSet;
-          
           track.scrollLeft = middleSetStartIndex * (itemWidth + gap);
         }
       });
@@ -45,14 +49,14 @@ export default function ProjectOverviewDetails() {
   const scrollLeft = () => {
     if (trackRef.current && trackRef.current.firstElementChild) {
       const itemWidth = (trackRef.current.firstElementChild as HTMLElement).offsetWidth;
-      trackRef.current.scrollBy({ left: -(itemWidth + 32), behavior: 'smooth' }); // 32 is roughly the 2rem gap
+      trackRef.current.scrollBy({ left: -(itemWidth + 32), behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (trackRef.current && trackRef.current.firstElementChild) {
       const itemWidth = (trackRef.current.firstElementChild as HTMLElement).offsetWidth;
-      trackRef.current.scrollBy({ left: itemWidth + 32, behavior: 'smooth' });
+      trackRef.current.scrollBy({ left: itemWidth + 32, behavior: "smooth" });
     }
   };
 
@@ -61,14 +65,12 @@ export default function ProjectOverviewDetails() {
 
   return (
     <div className="project-details-container font-inter">
-      <section className="3d-comp"></section>
-
       <div className="project-content-wrapper">
         <Link to="/" className="back-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <span style={{ marginLeft: '8px' }}>Back to Projects</span>
+          <span style={{ marginLeft: "8px" }}>Back to Projects</span>
         </Link>
 
         <div className="project-hero">
@@ -76,12 +78,16 @@ export default function ProjectOverviewDetails() {
             <h3 className="case-study-label">CASE STUDY</h3>
             <div className="hero-subtitle-row">
               {renderImageOrPlaceholder(project.images?.iconImage, "Icon", "project-icon")}
-              <h2 className="project-subtitle" style={{ color: project.backgroundColor }}>{project.subtitle}</h2>
+              <h2 className="project-subtitle" style={{ color: project.backgroundColor }}>
+                {project.subtitle}
+              </h2>
             </div>
             <p className="project-description">{project.description}</p>
           </div>
+
           <div className="hero-image-side">
-            {renderImageOrPlaceholder(project.images?.coverImages?.[0], "Cover", "cover-image")}
+            <div className="hero-circle-bg" />
+            <MacBook3D />
           </div>
         </div>
 
@@ -129,7 +135,7 @@ export default function ProjectOverviewDetails() {
             <div className="design-process-steps-side">
               {project.designProcess?.map((step, index) => (
                 <div key={index} className="process-step">
-                  <div className="step-number">{(index + 1).toString().padStart(2, '0')}</div>
+                  <div className="step-number">{(index + 1).toString().padStart(2, "0")}</div>
                   <h4 className="step-title">{step.title}</h4>
                   <p className="step-desc">{step.description}</p>
                 </div>
@@ -143,7 +149,7 @@ export default function ProjectOverviewDetails() {
           <div className="gallery-container">
             <button className="gallery-nav prev-btn" onClick={scrollLeft}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <div className="gallery-track" ref={trackRef}>
@@ -155,12 +161,11 @@ export default function ProjectOverviewDetails() {
             </div>
             <button className="gallery-nav next-btn" onClick={scrollRight}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );
