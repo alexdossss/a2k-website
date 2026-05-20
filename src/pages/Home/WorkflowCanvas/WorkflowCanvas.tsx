@@ -39,7 +39,7 @@ export default function WorkflowCanvas({ activeIndex, hoveredIndex, onLayerClick
     renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.type = THREE.PCFShadowMap;
     
     const ambientLight = new THREE.AmbientLight(0xffffff, 2.5); // CHANGE LIGHTNESS HERE
     scene.add(ambientLight);
@@ -67,11 +67,11 @@ export default function WorkflowCanvas({ activeIndex, hoveredIndex, onLayerClick
     const ctx = canvas.getContext('2d');
     if (ctx) {
       // HERE — gradient direction: (512,0) to (0,512) = light from top-right, shadow bottom-left
-      const grd = ctx.createLinearGradient(512, 0, 0, 512); // HERE — change coords to shift light direction
-      grd.addColorStop(0, '#f0f0f0');   // HERE — top-right: bright highlight
-      grd.addColorStop(0.8, '#7a7a7a'); // HERE — midpoint fade (+30% darker)
-      grd.addColorStop(0.65, '#aaaaaa'); // HERE — deeper shadow
-      grd.addColorStop(1, '#808080');   // HERE — bottom-left: darkest shadow (+30% darker)
+      const grd = ctx.createLinearGradient(0, 512, 512, 0); // HERE — change coords to shift light direction
+      grd.addColorStop(0, '#808080');   // HERE — bottom-left: darkest shadow (+30% darker)
+      grd.addColorStop(0.35, '#aaaaaa'); // HERE — deeper shadow
+      grd.addColorStop(0.2, '#7a7a7a'); // HERE — midpoint fade (+30% darker)
+      grd.addColorStop(1, '#f0f0f0');   // HERE — top-right: bright highlight
       ctx.fillStyle = grd;
       ctx.fillRect(0, 0, 512, 512);
       
@@ -82,6 +82,7 @@ export default function WorkflowCanvas({ activeIndex, hoveredIndex, onLayerClick
       }
     }
     const topTex = new THREE.CanvasTexture(canvas);
+    topTex.flipY = false;
 
     // Matte finish (high roughness, low metalness)
     const baseMatProps = { roughness: 0.9, metalness: 0.05 };
