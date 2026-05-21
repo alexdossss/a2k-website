@@ -64,7 +64,7 @@ export default function ProjectOverviewDetails() {
   const displayImages = galleryImages.length > 0 ? Array(50).fill(galleryImages).flat() : [];
 
   return (
-    <div className="project-details-container font-inter">
+    <div className="project-details-container font-urbanist">
       <div className="project-content-wrapper">
         <Link to="/" className="back-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
